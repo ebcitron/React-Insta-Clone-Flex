@@ -1,33 +1,28 @@
 import React from 'react';
-import Comments from './Comments';
-
-
-// import CommentInput from './CommentInput';
-
-
+import Comment from './Comment';
 import PropTypes from 'prop-types';
+import CommentInput from './CommentInput';
+
 
 
 class CommentContainer extends React.Component{
     constructor(props){
         super(props);
         this.state ={
-            comments: props.comments
+            comments: props.comment
 
         };
     }
     render(){
         return(
             <div>
-            {this.state.comments.map((c,i) => <Comments comment= {c} key = {i} />)}
-{/*           
+            {this.state.comments.map((c,i) => <Comment key={i} comment ={c} />)}
+
             <CommentInput />
-            </div> */}
+         </div>
         );
     }
 }
-
-
 
 CommentContainer.propTypes = {
     comments: PropTypes.arrayOf(
