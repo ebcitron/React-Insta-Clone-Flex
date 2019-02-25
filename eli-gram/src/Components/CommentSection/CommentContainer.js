@@ -2,36 +2,31 @@ import React from 'react';
 import Comment from './Comment';
 import PropTypes from 'prop-types';
 import CommentInput from './CommentInput';
+import './Comment.css';
 
 
+const CommentContainer = props => {
+    return(
 
-class CommentContainer extends React.Component{
-    constructor(props){
-        super(props);
-        this.state ={
-            comments: props.comment
+        <div className = "comments">
 
-        };
-    }
-    render(){
-        return(
-            <div>
-            {this.state.comments.map((c,i) => <Comment key={i} comment ={c} />)}
-
-            <CommentInput />
-         </div>
-        );
-    }
+        {props.comments.map((c,i) => ( <Comment key = {i} comment = {c} />
+        ))}
+        </div>
+        )
 }
 
-CommentContainer.propTypes = {
+
+
+    CommentContainer.propTypes = {
     comments: PropTypes.arrayOf(
         PropTypes.shape({
-            text: PropTypes.string,
-            username: PropTypes.string
+            
+            username: PropTypes.string,
+            text: PropTypes.string
         })
     )
-};
+    }  ;
 
 
 
@@ -42,3 +37,4 @@ CommentContainer.propTypes = {
 
 
 export default CommentContainer;
+

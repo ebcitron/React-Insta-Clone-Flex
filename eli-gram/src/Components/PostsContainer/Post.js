@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Posts.css';
 
 import PostHeader from './PostHeader';
 
@@ -18,7 +18,7 @@ const Post = props => {
             <img alt = "thumbnail" className = "image" src = {props.post.imageUrl} />
         </div>
             <CommentContainer comments = {props.post.comments} />
-        </div>
+        </div> 
     )
 
 
