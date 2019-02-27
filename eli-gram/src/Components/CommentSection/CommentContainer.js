@@ -7,13 +7,16 @@ import './Comment.css';
 
 const CommentContainer = props => {
     return(
-
+        <div>
         <div className = "comments">
 
         {props.comments.map((c,i) => ( <Comment key = {i} comment = {c} />
         ))}
         </div>
-        )
+  
+        <CommentInput />
+        </div>
+  )
 }
 
 

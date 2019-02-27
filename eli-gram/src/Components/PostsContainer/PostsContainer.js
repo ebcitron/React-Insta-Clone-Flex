@@ -8,6 +8,7 @@ const PostsContainer = props => {
         <div className = "Posts">
             {props.posts.map(posts => 
                 <Post key={posts.imageUrl} post = {posts} />
+                
              
             )}
 
