@@ -1,26 +1,25 @@
-import React from 'react';
-import './Posts.css';
-
-import PostHeader from './PostHeader';
+import React from "react";
+import "./Posts.css";
 
 
-import CommentContainer from '../CommentSection/CommentContainer';
+import PostHeader from "./PostHeader";
+
+import CommentContainer from "../CommentSection/CommentContainer";
 
 const Post = props => {
-    return(
-        <div className = "post">
-            <PostHeader 
-                username = {props.post.username}
-                thumbnailUrl={props.post.thumbnailUrl}
-                />
-        
-        <div>
-            <img alt = "thumbnail" className = "image" src = {props.post.imageUrl} />
-        </div>
-            <CommentContainer comments = {props.post.comments} />
-        </div> 
-    )
+  return (
+    <div className="post">
+      <PostHeader
+        username={props.post.username}
+        thumbnailUrl={props.post.thumbnailUrl}
+      />
 
-
-}
+      <div>
+        <img alt="thumbnail" className="image" src={props.post.imageUrl} />
+      </div>
+      <CommentContainer comments={props.post.comments} />
+    </div>
+  );
+};
+ibi
 export default Post;
