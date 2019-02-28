@@ -9,15 +9,18 @@ import CommentContainer from "../CommentSection/CommentContainer";
 const Post = props => {
   return (
     <div className="post">
-      <PostHeader
-        username={props.post.username}
-        thumbnailUrl={props.post.thumbnailUrl}
-      />
+      <div className="header">
+        <PostHeader
+          username={props.post.username}
+          thumbnailUrl={props.post.thumbnailUrl}/>
+      </div>
 
-      <div>
+      <div className="postImage">
         <img alt="thumbnail" className="image" src={props.post.imageUrl} />
       </div>
-      <CommentContainer comments={props.post.comments} />
+      <div className ='comments'>
+      <CommentContainer comments={props.post.comments} likes={props.post.likes} />
+      </div>
     </div>
   );
 };

@@ -16,7 +16,7 @@ const SearchBar = props => {
       </div>
       <div className="searchBarStyling">
         <Form>
-        <input type="text" name='searchBar' placeholder="Search" />
+        <input type="search" name='searchBar' placeholder="Search" onChange = {props.searchPosts} />
         </Form>
       </div>
       <div className="social-wrapper">
