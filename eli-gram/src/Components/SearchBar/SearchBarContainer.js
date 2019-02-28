@@ -1,13 +1,18 @@
 import React from 'react';
 import './SearchBar.css';
-import {Form} from 'reactstrap';
+import {Form, div} from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import * as Icon from 'react-feather';
+import styled from 'styled-components';
 
-
+const divy = styled.div`
+background: green
+`;
 
 const SearchBar = props => {
   return(
-    <div className="search-bar-wrapper">
+    
+    <divy className="search-bar-wrapper">
       <div className="image-wrapper">
       <Icon.Instagram className = 'instaIcon' />
       <img className = 'instaCursive'
@@ -30,7 +35,7 @@ const SearchBar = props => {
           <Icon.User className="fa fa-user-circle" />
         </div>
       </div>
-    </div>
+    </divy> 
   );
 };
 

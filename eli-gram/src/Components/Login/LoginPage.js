@@ -1,7 +1,7 @@
 import React from 'react';
 import {input, button} from 'reactstrap';
 import styled from 'styled-components'; 
-import $ from 'jquery';
+
 const Button = styled.button``;
 
 
@@ -13,6 +13,14 @@ class LoginPage  extends React.Component{
             password:''
         }
     }
+
+
+    loginHandler = e => {
+        localStorage.setItem('user', this.state.username);
+        window.location.reload();
+        console.log("loginHandler", this.state.username, localStorage);
+    }
+
 
     enterUsername = e =>{
         e.preventDefault();
@@ -34,7 +42,7 @@ class LoginPage  extends React.Component{
     render(){
     return(
         <div className = "login">
-            <form>
+            <form >
                 <input
                     name = 'username'
                     type = 'text'
@@ -43,7 +51,7 @@ class LoginPage  extends React.Component{
                     onChange={this.enterUsername} 
                     />
             </form>
-            <form >
+            <form onSubmit = {this.loginHandler}>
                 <input
                     name = 'password'
                     type = 'text'
@@ -52,7 +60,7 @@ class LoginPage  extends React.Component{
                     onChange={this.enterPassword}
                     />
             </form>
-            <button>Login</button>
+            <button onClick = {this.loginHandler}>Login</button>
         </div>
         );
     }

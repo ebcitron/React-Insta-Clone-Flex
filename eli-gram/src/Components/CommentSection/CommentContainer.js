@@ -36,7 +36,7 @@ class CommentContainer extends React.Component {
         ...this.state.comments,
         {
           text: this.state.comment,
-          username: "Eli"
+          username: localStorage.key.user
         }
       ]
     });
@@ -71,14 +71,14 @@ class CommentContainer extends React.Component {
       </div>
     );
   }
-
-  // CommentContainer.propTypes = {
-  //   comments: PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       username: PropTypes.string,
-  //       text: PropTypes.string
-  //     })
-  //   )
-  // };
 }
+  CommentContainer.propTypes = {
+    comments: PropTypes.arrayOf(
+      PropTypes.shape({
+        username: PropTypes.string,
+        text: PropTypes.string
+      })
+    )
+  };
+
 export default CommentContainer;
