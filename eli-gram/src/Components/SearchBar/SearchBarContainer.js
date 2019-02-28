@@ -1,6 +1,6 @@
 import React from 'react';
 import './SearchBar.css';
-import {Form, Input} from 'reactstrap';
+import {Form} from 'reactstrap';
 import * as Icon from 'react-feather';
 
 

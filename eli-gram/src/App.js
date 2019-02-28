@@ -3,6 +3,7 @@ import "./App.css";
 import dummyData from "./dummy-data";
 import PostsContainer from "./Components/PostsContainer/PostsContainer";
 import SearchBar from "./Components/SearchBar/SearchBarContainer";
+import LoginPage from "./Components/Login/LoginPage";
 
 
 // class app - sets this.state = dummyData and calls it posts
@@ -19,7 +20,7 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({
-      postData: dummyData;
+      postData: dummyData
     })
   }
 
@@ -37,6 +38,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <LoginPage />
         <div className="searchBar">
           <SearchBar searchPosts = {this.handleSearch} />
         </div>
