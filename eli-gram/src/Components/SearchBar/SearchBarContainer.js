@@ -4,23 +4,30 @@ import {Form, Input} from 'reactstrap';
 import * as Icon from 'react-feather';
 
 
-const SearchBar = () => {
-  return (
+
+const SearchBar = props => {
+  return(
     <div className="search-bar-wrapper">
       <div className="image-wrapper">
+      <Icon.Instagram className = 'instaIcon' />
+      <img className = 'instaCursive'
+      src="https:fontmeme.com/images/instagram-new-logo.png"
+      alt = "Instagram Written"/>
       </div>
-      <div>
-        <input type="text" placeholder="Search" />
+      <div className="searchBarStyling">
+        <Form>
+        <input type="text" name='searchBar' placeholder="Search" />
+        </Form>
       </div>
       <div className="social-wrapper">
         <div className="social">
-          <i className="fa fa-compass" />
+          <Icon.Compass  className="fa fa-compass" />
         </div>
         <div className="social">
-          <i className="fa fa-heart" />
+          <Icon.Heart className="fa fa-heart" />
         </div>
         <div className="social">
-          <i className="fa fa-user-circle" />
+          <Icon.User className="fa fa-user-circle" />
         </div>
       </div>
     </div>

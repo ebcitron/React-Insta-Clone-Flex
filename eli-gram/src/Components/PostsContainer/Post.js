@@ -21,5 +21,5 @@ const Post = props => {
     </div>
   );
 };
-ibi
+
 export default Post;
