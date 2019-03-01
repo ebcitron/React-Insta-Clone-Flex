@@ -36,7 +36,7 @@ class CommentContainer extends React.Component {
         ...this.state.comments,
         {
           text: this.state.comment,
-          username: localStorage.key.user
+          username: localStorage.key(0)
         }
       ]
     });
