@@ -1,27 +1,42 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import dummyData from "./dummy-data";
+import PostsContainer from "./Components/PostsContainer/PostsContainer";
+import SearchBar from "./Components/SearchBar/SearchBarContainer";
+import LoginPage from "./Components/Login/LoginPage";
+
+
+// class app - sets this.state = dummyData and calls it posts
+    // Than It renders our Searchbar and PostsContainer(containing all) to the screen
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      postData: [],
+      searchData: []
+        };
+  }
+
+  componentDidMount() {
+    this.setState({
+      postData: dummyData
+    })
+  }
+
+  handleSearch = e => {
+    const filtered = this.state.postData.filter( post => {
+      if(post.username.includes(e.target.value)) {
+        return post
+      } 
+    });
+    this.setState({
+      searchData: filtered
+    })
+  }
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+  
   }
 }
 
